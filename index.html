@@ -3,11 +3,138 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- =====================================================================
+     CONTENT BLOCK  -  THIS IS THE ONLY PART YOU NEED TO EDIT
+     =====================================================================
+     To make a new page: copy this file (002.html, 003.html ...), then
+     change only the values between the quotation marks below.
+
+     Rules:
+       - Keep the quotation marks "like this" and the commas at line ends.
+       - Paragraphs may contain simple HTML, e.g. <em>italic</em> or
+         <a href="002.html">a link</a>. Everything else is plain text.
+       - Leave a list empty ( [] ) to hide that part of the page.
+       - Image paths are relative to this file, e.g. "images/photo.jpg".
+         If an image is missing, a dotted placeholder is shown instead.
+     ===================================================================== -->
+<script>
+const PAGE = {
+
+  /* ---- SITE MENU (same on every page: copy this block as it is) ----- */
+  site: {
+    title: "HEADROOM",                 // small title, top left, always visible. Click it to open the links
+    links: [                             // [ "text", "file" ]. The link of the current page is marked automatically
+      ["Work",   "index.html"],
+      ["Discography",   "sound.html"],
+      ["Comercial", "comercial.html"],
+      ["About",   "about.html"],
+      ["Contact", "contact.html"]
+    ]                                    // an empty list [] shows the title only, without a menu
+  },
+
+  /* ---- PAGE IDENTITY ------------------------------------------------ */
+  number: 1,                    // this page's number. Shows as 001 in the top tab and footer
+  nextPage: "",                 // file of the next page, e.g. "002.html". The right-hand tab then
+                                // shows number+1 and becomes a link. Leave "" on the last page
+  browserTitle: "Gore Metal Redux",   // text on the browser tab
+  title: "gore metal redux",          // large title box (left)
+  variant: "ref. II – 151",         // small title box (right)
+
+  /* ---- SECTION HEADINGS --------------------------------------------- */
+  headings: {
+    main:  "technical specs",         // above the first table
+    audio: "recordings",             // above the track list
+    materials: "Title: Gore Metal Redux (series)",     // small label above the materials text
+    sheet: "Process and details"  // above the small images
+  },
+
+  /* ---- INFO LINES (top right):  [ "label", "value" ] ---------------- */
+  info: [
+    ["Year",   "2023"], /*"2022 . 02 . 05"*/
+    ["Series No.", "GR23 – 1100001"],
+    
+  ],
+
+  /* ---- MAIN TABLE:  [ "label", "unit", "value" ] --------------------- */
+  /* leave the unit as "" when there is none; delete the rows a page does not need */
+  mainData: [
+    ["Title",      "",   "Untitled (Copper Study)"],
+    ["Year",       "",   "2026"],
+    ["Dimensions", "cm", "120 × 80 × 60"]           // H × W × D
+  ],
+  mainValuesLeft: false,        // false = values centred (good for numbers); true = left aligned
+
+  /* ---- MATERIALS: small technical text under the table ---------------- */
+  /* one line per item; an empty list [] hides it (e.g. on sound pages) */
+  materials: [
+    "Materials: Wood, Glass, Iron-Oxide, Bone, Teeth,",
+    "Butcher Hooks, Meal Worms, Car-Battery, Car-parts,",
+    "Electronics Components, Wire Jumpers, Handmade Circuitry,",
+    "2x 18 speakers, 1200W Subwoofer, Light"
+  ],
+
+  /* Example for a SOUND piece, to copy over the table block above:
+  mainData: [
+    ["Title",       "",    "Spatial sound piece"],
+    ["Channels",    "ch",  "16"],
+    ["Sample rate", "kHz", "48.0"],
+    ["Run time",    "min", "38"]
+  ],
+  materials: [],
+  */
+
+  /* ---- TEXT BOXES: each is a list of paragraphs --------------------- */
+  texts: {
+    one: [        // left column, between the table and Fig. 2
+      "Gore Metal Redux is a work series consisting of assembled object sculpture, live organisms, organic matter, chemical systems, light and sound devices. Material is recorded in the room where it is later diffused. The room response is kept as part of the source, so the architecture works as an instrument alongside the recorded sounds. The work follows a protocol in three stages: measurement of the space, composition against that measurement, and adjustment on site. Each stage produces its own documentation, which is gathered below as process and detail images. Speaker positions, delay times and levels are treated as compositional parameters and recorded in the score together with the musical material. The installation can be reconfigured for a new room by repeating the first stage and adapting the second. "
+    ],
+    two: [        // right column, between Fig. 1 and the audio list
+      "Material is recorded in the room where it is later diffused. The room response is kept as part of the source, so the architecture works as an instrument alongside the recorded sounds."
+    ],
+    three: [      // full width, before the small images
+      "The work follows a protocol in three stages: measurement of the space, composition against that measurement, and adjustment on site. Each stage produces its own documentation, which is gathered below as process and detail images.",
+      "Speaker positions, delay times and levels are treated as compositional parameters and recorded in the score together with the musical material. The installation can be reconfigured for a new room by repeating the first stage and adapting the second."
+    ]
+  },
+
+  /* ---- MAIN IMAGES (3:2 landscape works best) ----------------------- */
+  /* "caption" is the text after "Fig. N –"; "alt" is a short description for screen readers */
+  figure1: { src: "/Users/spitbender/Desktop/crypt/WWW/www/0./assets/1.\ folio/work/gmr/imgs/IMG_2740.JPG", alt: "", caption: "prostethic teeth" },   // right column. Empty src = halftone placeholder
+  figure2: { src: "images/image-02.jpg", alt: "Describe the image here", caption: "image description" },   // left column
+
+  /* ---- AUDIO TRACKS ------------------------------------------------- */
+  /* add or delete lines freely. No tracks = audio list and player bar are hidden */
+  tracks: [
+    { src: "audio/track-01.mp3", title: "Track 01" },
+    { src: "audio/track-02.mp3", title: "Track 02" },
+    { src: "audio/track-03.mp3", title: "Track 03" }
+  ],
+
+  /* ---- SMALL IMAGES (square crops work best, click to enlarge) ------ */
+  /* Fig. numbers continue after the two main images (3, 4, 5 ...) */
+  sheetGray: true,              // true = grayscale, colour on hover. false = always colour
+  sheet: [
+    { src: "images/detail-01.jpg", alt: "Describe the image", caption: "description" },
+    { src: "images/detail-02.jpg", alt: "Describe the image", caption: "description" },
+    { src: "images/detail-03.jpg", alt: "Describe the image", caption: "description" },
+    { src: "images/detail-04.jpg", alt: "Describe the image", caption: "description" },
+    { src: "images/detail-05.jpg", alt: "Describe the image", caption: "description" },
+    { src: "images/detail-06.jpg", alt: "Describe the image", caption: "description" },
+    { src: "images/detail-07.jpg", alt: "Describe the image", caption: "description" },
+    { src: "images/detail-08.jpg", alt: "Describe the image", caption: "description" }
+  ]
+};
+</script>
+<!-- ===================== END OF CONTENT BLOCK ===================== -->
+
 <title>Spec sheet layout</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* STYLE SHEET. Colours are the variables just below (paper / ink / rule); fonts are --label and --value.
+   Nothing here needs editing to change content: edit the PAGE block at the top of the file instead. */
 :root{
   --paper:#ECEBE6; --ink:#141413; --rule:#8d8b84; --tab-text:#ECEBE6;
   --label:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
@@ -23,31 +150,51 @@
 *,*::before,*::after{box-sizing:border-box}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--label);font-size:15px;line-height:1.35;min-height:100%}
-.page{position:relative;max-width:1000px;margin:0 auto;padding:28px 56px 48px 20px;overflow:hidden}
+.page{position:relative;max-width:1000px;margin:0 auto;padding:28px 56px 48px 20px;overflow-x:clip}
 .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 22px;align-items:start}
 
+/* site menu: small sticky title top-left; clicking it opens a ruled list of links */
+.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;width:max-content;max-width:100%;margin:0 0 12px}
+.site-btn{display:block;background:var(--paper);color:var(--ink);border:0;padding:3px 8px 3px 0;font:500 14px/1.3 var(--label);letter-spacing:.14em;cursor:pointer;text-align:left}
+.site-btn::after{content:"+";font-family:var(--value);margin-left:.8em;letter-spacing:0}
+.site-btn[aria-expanded=true]::after{content:"\2212"}
+.site-btn.static{cursor:default}
+.site-btn.static::after{content:""}
+.site-menu{position:absolute;top:100%;left:0;margin:2px 0 0;padding:0;list-style:none;min-width:200px;background:var(--paper);border:1px solid var(--rule)}
+.site-menu li+li{border-top:1px solid var(--rule)}
+.site-menu a{display:block;padding:6px 12px 6px 8px;font-size:14px;letter-spacing:.08em;text-decoration:none}
+.site-menu a::before{content:"";display:inline-block;width:1.2em}
+.site-menu a[aria-current=page]::before{content:"\25CF"}
+.site-menu a:hover,.site-menu a:focus-visible{background:var(--ink);color:var(--paper);outline:none}
+
 /* tabs */
-.tab-top{position:absolute;top:28px;right:0;background:var(--ink);color:var(--tab-text);font:700 64px/1 var(--label);height:70px;padding:0 0 0 14px;width:92px;overflow:hidden;white-space:nowrap}
+.tab-top{position:absolute;top:28px;right:0;background:var(--ink);color:var(--tab-text);font:700 64px/1 var(--label);height:70px;padding:0 0 0 14px;width:124px;overflow:hidden;white-space:nowrap}
 .tab-top span{display:block;transform:translateX(18px);padding-top:3px}
 .tab-side{position:fixed;right:0;top:46%;background:var(--ink);color:var(--tab-text);writing-mode:vertical-rl;font:500 22px/1 var(--value);padding:16px 8px;letter-spacing:.06em;z-index:5}
 
+a.tab-side{text-decoration:none;cursor:pointer}
+a.tab-side:hover,a.tab-side:focus-visible{background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 3px var(--ink);outline:none}
+
 /* boxes */
 .box{border:3px solid var(--ink);margin-bottom:18px}
-.title{display:grid;grid-template-columns:1.25fr 1fr;border:3px solid var(--ink);margin-bottom:12px}
+.title{display:grid;grid-template-columns:1.25fr 1fr;border:1px solid var(--rule);margin-bottom:12px}
 .title h1,.title p{margin:0;padding:12px 16px;font-weight:700}
-.title h1{font-size:32px;letter-spacing:.02em;border-right:2px solid var(--ink)}
-.title p{font-size:23px;display:flex;align-items:center;font-weight:500}
-h2{font-size:19px;font-weight:700;margin:14px 0 4px;letter-spacing:.08em}
+.title h1{font-size:18px;letter-spacing:.02em;border-right:1px solid var(--rule)} /* large title */
+.title p{font-size:16px;display:flex;align-items:center;font-weight:500} /* small title */
+h2{font-size:12px;font-weight:700;margin:14px 0 4px;letter-spacing:.08em}
 h2::before{content:"\25CF";margin-right:6px}
 
-table{width:100%;border-collapse:collapse;border:3px solid var(--ink);margin-bottom:18px}
+table{width:100%;border-collapse:collapse;border:1px solid var(--rule);margin-bottom:18px}
 th,td{border:1px solid var(--rule);padding:5px 8px;font-weight:500;text-align:left;vertical-align:middle}
 tbody tr:first-child>*{border-top:0}
 th[scope=row]{letter-spacing:.28em;font-size:14px;white-space:nowrap}
 th.tight{letter-spacing:.06em;white-space:normal}
 td{font-family:var(--value);font-size:14px;text-align:center}
 td.u,th.u{width:3.2em;font:400 10px/1 var(--value);text-align:right;color:var(--ink);opacity:.8;letter-spacing:0}
-th.group{writing-mode:vertical-rl;text-align:center;letter-spacing:.5em;width:2.4em;border-right:1px solid var(--ink);padding:4px}
+td.left{text-align:left}
+.tech{margin:0 0 22px;font:400 11px/1.55 var(--value);letter-spacing:.01em;opacity:.85}
+.tech p{margin:0}
+.tech .tech-label{font:500 11px/1.55 var(--label);letter-spacing:.16em;margin-bottom:1px}
 td.std{width:38%}
 tbody tr{transition:background .12s,color .12s}
 tbody tr:hover{background:var(--ink);color:var(--paper)}
@@ -66,9 +213,54 @@ tbody tr:hover th,tbody tr:hover td{border-color:var(--paper)}
   radial-gradient(circle at 50% 50%,var(--ink) 0 1.1px,transparent 1.5px) 0 0/5px 5px;
   -webkit-mask-image:radial-gradient(ellipse 48% 44% at 52% 54%,#000 30%,transparent 100%);
   mask-image:radial-gradient(ellipse 48% 44% at 52% 54%,#000 30%,transparent 100%)}
-.fig-wrap{border:1px solid var(--rule);margin-bottom:22px}
+.fig-wrap{border:1px solid var(--rule);margin:0 0 22px}
 .fig-wrap figcaption{font:400 11px/1.2 var(--value);padding:4px 8px;border-top:1px solid var(--rule)}
+.frame{position:relative;aspect-ratio:1.6/1;background:radial-gradient(circle at 50% 50%,var(--rule) 0 1px,transparent 1.4px) 0 0/5px 5px}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:var(--paper)}
+.frame img[hidden]{display:none}
 
+/* text boxes */
+.text{margin:0 0 22px}
+.text[hidden],.strip[hidden]{display:none}
+.text p{margin:0 0 .8em;font:400 15px/1.55 var(--label);hyphens:auto}
+.text p:last-child{margin-bottom:0}
+
+/* contact sheet */
+.sheet{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0 1px 22px 0}
+.cell{margin:0 -1px -1px 0;border:1px solid var(--rule)}
+.cell figcaption{font:400 11px/1.2 var(--value);padding:4px 8px;border-top:1px solid var(--rule)}
+.frame.sq{aspect-ratio:1/1}
+.zoom{display:block;width:100%;border:0;padding:0;cursor:zoom-in;font:inherit;color:inherit}
+.zoom:focus-visible{outline-offset:-3px}
+@media (hover:hover){
+  .sheet.gray img{filter:grayscale(1);transition:filter .2s}
+  .sheet.gray .cell:hover img,.sheet.gray .zoom:focus-visible img{filter:none}
+}
+@media (prefers-reduced-motion:reduce){.sheet.gray img{transition:none}}
+
+/* lightbox */
+.lightbox{border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:12px;width:min(96vw,1100px);max-height:94vh;overflow:auto}
+.lightbox::backdrop{background:rgba(20,20,19,.72)}
+.lightbox figure{margin:0}
+.lightbox img{display:block;max-width:100%;max-height:70vh;margin:0 auto;object-fit:contain}
+.lightbox figcaption{font:400 12px/1.3 var(--value);padding-top:8px}
+.lb-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;border-top:1px solid var(--rule);padding-top:10px}
+.lb-bar .lb-count{font:400 12px var(--value);margin-right:auto}
+
+/* audio */
+.player{margin-bottom:22px}
+.player table{margin-bottom:0}
+.play{font:500 13px var(--label);letter-spacing:.14em;background:transparent;color:inherit;border:1px solid currentColor;padding:3px 10px;cursor:pointer;min-width:4.6em}
+.play[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+tbody tr:hover .play[aria-pressed=true]{background:var(--paper);color:var(--ink)}
+td.name{text-align:left}
+tr.on td.name{font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.wave{display:block;width:100%;height:56px;cursor:pointer;touch-action:none}
+.wave:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.strip{position:sticky;bottom:0;z-index:6;margin-top:6px;background:var(--paper);border:1px solid var(--rule);padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:auto minmax(6ch,14ch) minmax(0,1fr) auto;gap:14px;align-items:center}
+.strip .wave{height:42px}
+.strip .s-title{font-weight:500;letter-spacing:.06em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.strip .time{font:400 12px var(--value);white-space:nowrap}
 a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
 a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 .foot{margin-top:6px;font:400 12px var(--value);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -76,102 +268,352 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset
 .scroll{overflow-x:auto;margin-bottom:18px}
 .scroll table{margin-bottom:0;min-width:300px}
 
+/* alignment: image top = main data table top */
+.grid>.title{grid-column:1;grid-row:1}
+.grid>.meta{grid-column:2;grid-row:1/3}
+.grid>h2{grid-column:1;grid-row:2}
+.grid>main{grid-column:1;grid-row:3}
+.grid>aside{grid-column:2;grid-row:3}
 @media (max-width:760px){
   .page{padding:20px 44px 40px 12px}
   .grid{grid-template-columns:minmax(0,1fr)}
+  .grid>*{grid-column:auto!important;grid-row:auto!important}
+  .sheet{grid-template-columns:repeat(2,minmax(0,1fr))}
   .title h1{font-size:24px}.title p{font-size:18px}
-  .tab-top{font-size:48px;height:56px;width:76px;top:20px}
+  .tab-top{font-size:48px;height:56px;width:100px;top:20px}
   .tab-side{font-size:18px;padding:12px 6px}
   th[scope=row]{letter-spacing:.14em}
+  .strip{grid-template-columns:auto minmax(0,1fr) auto;gap:8px 12px;padding-left:10px;padding-right:10px}
+  .strip .wave{grid-column:1/-1;order:5;height:34px}
 }
 @media (prefers-reduced-motion:reduce){tbody tr{transition:none}}
 </style>
 </head>
 <body>
-<div class="page">
-  <div class="tab-top" aria-hidden="true"><span>01</span></div> <!-- RIGHT NR COLUMN -->
-  <div class="tab-side" aria-hidden="true">220</div>
+<!-- PAGE SKELETON. Empty containers: the builder script fills them from the PAGE block above. -->
+<div class="page" id="top">
 
+  <!-- site menu: the title button opens the list (filled from PAGE.site) and stays visible while scrolling -->
+  <nav class="site" id="site" aria-label="Site">
+    <button type="button" class="site-btn" id="site-btn" aria-expanded="false" aria-controls="site-menu"><span id="site-title"></span></button>
+    <ul class="site-menu" id="site-menu" hidden></ul>
+  </nav>
+
+  <!-- index tabs: top = this page, side = next page (a link when nextPage is set) -->
+  <div class="tab-top" aria-hidden="true"><span id="tab-top"></span></div>
+  <div class="tab-side" id="tab-side" aria-hidden="true"></div>
+
+  <!-- two-column grid. Rows: [title | info] / [heading | info] / [left column | right column]
+       so that Fig. 1 and the first table always start at the same height -->
   <div class="grid">
-    <!-- LEFT COLUMN -->
+    <div class="title"><h1 id="title-main"></h1><p id="title-variant"></p></div>
+    <dl class="meta meta-head" id="info"></dl>
+    <h2 id="h-main"></h2>
+
+    <!-- left column -->
     <main>
-      <div class="title" style="margin-right:0">
-        <h1>GLOBAL OVERGROOVE</h1>
-        <p>CRYSTAL BROADCAST</p>
-      </div>
+      
+      <div class="tech" id="materials"></div>   <!-- materials: small technical text -->
 
-      <h2>Main data</h2>
-      <div class="scroll"><table>
-        <tbody>
-          <tr><th scope="row">Title</th><td class="u"></td><td>GORE METAL REDUX</td></tr>
-          <tr><th scope="row">Length</th><td class="u">m</td><td>12.400</td></tr>
-          <tr><th scope="row">Width</th><td class="u">m</td><td>6.200</td></tr>
-          <tr><th scope="row">Height</th><td class="u">m</td><td>3.500</td></tr>
-          <tr><th scope="row">Channels</th><td class="u">ch</td><td>16</td></tr>
-          <tr><th scope="row">Sample rate</th><td class="u">kHz</td><td>48.0</td></tr>
-          <tr><th scope="row">Run time</th><td class="u">min</td><td>38</td></tr>
-        </tbody>
-      </table></div>
-
-      <div class="scroll"><table>
-        <tbody>
-          <tr><th scope="row" rowspan="2">Load</th><th class="u">front</th><td>44</td><th class="u">rear</th><td>51</td></tr>
-          <tr><th class="u">total</th><td colspan="3">95</td></tr>
-          <tr><th scope="row" rowspan="2">Gross load</th><th class="u">front</th><td>63</td><th class="u">rear</th><td>87</td></tr>
-          <tr><th class="u">total</th><td colspan="3">150</td></tr>
-        </tbody>
-      </table></div>
-
-      <h2>Fixing torque</h2>
-      <div class="scroll"><table>
-        <tbody>
-          <tr><th class="group" rowspan="4" scope="rowgroup">Rig</th><th scope="row" class="tight">Truss clamp</th><td class="u">mm</td><td>8</td><td>2.6</td></tr>
-          <tr><th scope="row" class="tight">Speaker mount</th><td class="u">mm</td><td>6</td><td>1.2</td></tr>
-          <tr><th scope="row" class="tight">Hanging point</th><td class="u">mm</td><td>14</td><td>12.0</td></tr>
-          <tr><th scope="row" class="tight">Safety cable</th><td class="u">mm</td><td>14</td><td>6.5</td></tr>
-          <tr><th class="group" rowspan="4" scope="rowgroup">Room</th><th scope="row" class="tight">Panel bracket</th><td class="u">mm</td><td>8</td><td>2.6</td></tr>
-          <tr><th scope="row" class="tight">Floor plate</th><td class="u">mm</td><td>12</td><td>9.0</td></tr>
-          <tr><th scope="row" class="tight">Cable tray</th><td class="u">mm</td><td>8</td><td>0.6</td></tr>
-          <tr><th scope="row" class="tight">Sensor housing</th><td class="u">mm</td><td>8</td><td>1.25</td></tr>
-        </tbody>
-      </table></div>
+      <div class="text" id="text-1"></div>
+      <figure class="fig-wrap" id="fig-2"></figure>
     </main>
 
-    <!-- RIGHT COLUMN -->
+    <!-- right column -->
     <aside>
-      <dl class="meta meta-head">
-        <dt>Opening</dt><dd>2026 . 02 . 05</dd>
-        <dt>Venue No.</dt><dd>MD23 &ndash; 1100001</dd>
-        <dt>Series No.</dt><dd>MD23 &ndash; 1100001</dd>
-        <dt>Reference</dt><dd>II &ndash; 151</dd>
-      </dl>
-
-      <figure class="fig-wrap">
-        <div class="halftone" role="img" aria-label="Halftone image placeholder"></div>
-        <figcaption>Fig. 1 &mdash; image placeholder, halftone grayscale</figcaption>
-      </figure>
-
-      <h2>Service values</h2>
-      <div class="scroll"><table>
-        <tbody>
-          <tr><th scope="row" class="tight">Fader travel</th><td class="u">mm</td><td>10&ndash;20</td></tr>
-          <tr><th scope="row" class="tight">Pedal travel</th><td class="u">mm</td><td>20&ndash;30</td></tr>
-          <tr><th scope="row" class="tight">Rim runout</th><td class="u">mm</td><td>2.0</td></tr>
-          <tr><th scope="row" rowspan="2" class="tight">Drum</th><th class="u">std</th><td>110</td></tr>
-          <tr><th class="u">limit</th><td>111</td></tr>
-          <tr><th scope="row" rowspan="2" class="tight">Disc</th><th class="u">std</th><td>4.0</td></tr>
-          <tr><th class="u">limit</th><td>3.5</td></tr>
-          <tr><th scope="row" rowspan="2" class="tight">Pressure</th><th class="u">front</th><td>1.25</td></tr>
-          <tr><th class="u">rear</th><td>1.25</td></tr>
-          <tr><th scope="row" class="tight">Idle</th><td class="u">rpm</td><td>1,300 &plusmn; 100</td></tr>
-          <tr><th scope="row" class="tight">Reservoir</th><td class="u">l</td><td>6.0</td></tr>
-          <tr><th scope="row" class="tight">Coolant</th><td class="u">l</td><td>&mdash;</td></tr>
-        </tbody>
-      </table></div>
+      <figure class="fig-wrap" id="fig-1"></figure>
+      <div class="scroll"><table><tbody id="main-data"></tbody></table></div>
+      <div class="text" id="text-2"></div>
+      <div id="audio-block">
+        <h2 id="h-audio"></h2>
+        <div class="player" data-player>
+          <audio preload="metadata"></audio>
+          <div class="scroll"><table><tbody id="tracks"></tbody></table></div>
+        </div>
+      </div>
     </aside>
   </div>
 
-  <div class="foot"><span>Index 220</span><a href="#top">Back to top</a></div>
+  <!-- full-width text box -->
+  <div class="text" id="text-3"></div>
+
+  <!-- small images (contact sheet) -->
+  <div id="sheet-block">
+    <h2 id="h-sheet"></h2>
+    <div class="sheet" id="sheet"></div>
+  </div>
+
+  <!-- enlarged image viewer (opened by clicking a small image) -->
+  <dialog class="lightbox" aria-label="Image viewer">
+    <figure><img alt=""><figcaption></figcaption></figure>
+    <div class="lb-bar">
+      <span class="lb-count"></span>
+      <button type="button" class="play" data-lb="prev">Prev</button>
+      <button type="button" class="play" data-lb="next">Next</button>
+      <button type="button" class="play" data-lb="close">Close</button>
+    </div>
+  </dialog>
+
+  <!-- audio player bar: sticks to the bottom of the screen while scrolling -->
+  <div class="strip" data-strip role="region" aria-label="Audio player">
+    <button type="button" class="play" aria-pressed="false">Play</button>
+    <div class="s-title" aria-live="polite">Select a track</div>
+    <canvas class="wave" tabindex="0" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></canvas>
+    <span class="time">0:00 / 0:00</span>
+  </div>
+
+  <div class="foot"><span id="foot-index"></span><a href="#top">Back to top</a></div>
 </div>
+
+<!-- SCRIPT 1 of 3: BUILDER. Reads the PAGE block and fills the skeleton above. No need to edit. -->
+<script>
+(function(){
+  try {
+    var C = PAGE;
+    function $(id){ return document.getElementById(id); }
+    function el(tag, cls, text){ var e=document.createElement(tag); if(cls) e.className=cls; if(text!=null) e.textContent=text; return e; }
+    function pad(n){ return String(n).padStart(3,'0'); }
+
+    // page identity: browser tab title, big title, tabs, footer
+    document.title = C.browserTitle;
+    $('title-main').textContent = C.title;
+    $('title-variant').textContent = C.variant;
+    $('tab-top').textContent = pad(C.number);
+    $('foot-index').textContent = 'Index ' + pad(C.number);
+    var side = $('tab-side');
+    if (C.nextPage) {                       // next page set: the side tab becomes a link to it
+      var link = el('a', 'tab-side', pad(C.number + 1));
+      link.href = C.nextPage;
+      link.setAttribute('aria-label', 'Next page, ' + pad(C.number + 1));
+      side.replaceWith(link);
+    } else {                                // last page: side tab repeats this page's number
+      side.textContent = pad(C.number);
+    }
+
+    // site menu: title button + list of links; current page marked; closes on outside click or Esc
+    var btn = $('site-btn'), menu = $('site-menu'), links = (C.site && C.site.links) || [];
+    $('site-title').textContent = C.site ? C.site.title : '';
+    var here = location.pathname.split('/').pop() || 'index.html';
+    links.forEach(function(l){
+      var li = el('li'), a = el('a', null, l[0]);
+      a.href = l[1];
+      if (l[1].split('/').pop().split('#')[0].split('?')[0] === here) a.setAttribute('aria-current', 'page');
+      li.appendChild(a); menu.appendChild(li);
+    });
+    if (!links.length) { btn.classList.add('static'); btn.removeAttribute('aria-expanded'); btn.removeAttribute('aria-controls'); }
+    else {
+      var setOpen = function(o){ menu.hidden = !o; btn.setAttribute('aria-expanded', o); };
+      btn.addEventListener('click', function(){ setOpen(menu.hidden); });
+      document.addEventListener('click', function(e){ if (!$('site').contains(e.target)) setOpen(false); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); } });
+    }
+
+    // section headings
+    $('h-main').textContent = C.headings.main;
+    $('h-audio').textContent = C.headings.audio;
+    $('h-sheet').textContent = C.headings.sheet;
+
+    // info lines (top right)
+    C.info.forEach(function(r){ $('info').appendChild(el('dt', null, r[0])); $('info').appendChild(el('dd', null, r[1])); });
+
+    // main table: label | unit | value
+    C.mainData.forEach(function(r){
+      var tr = el('tr'), th = el('th', null, r[0]); th.scope = 'row';
+      tr.appendChild(th); tr.appendChild(el('td', 'u', r[1])); tr.appendChild(el('td', C.mainValuesLeft ? 'left' : null, r[2]));
+      $('main-data').appendChild(tr);
+    });
+
+    // materials: small technical text under the table; an empty list hides it
+    var mat = $('materials');
+    if (!C.materials || !C.materials.length) { mat.hidden = true; }
+    else {
+      mat.appendChild(el('p', 'tech-label', C.headings.materials));
+      C.materials.forEach(function(t){ var p = el('p'); p.innerHTML = t; mat.appendChild(p); });
+    }
+
+    // text boxes (paragraphs may contain simple HTML); an empty list hides the box
+    function fillText(id, paras){
+      var box = $(id);
+      if (!paras || !paras.length) { box.hidden = true; return; }
+      paras.forEach(function(t){ var p = el('p'); p.innerHTML = t; box.appendChild(p); });
+    }
+    fillText('text-1', C.texts.one); fillText('text-2', C.texts.two); fillText('text-3', C.texts.three);
+
+    // images: a frame with the picture; if the file is missing the dotted placeholder stays visible
+    function image(src, alt){
+      var im = new Image(); im.src = src; im.alt = alt || ''; im.loading = 'lazy';
+      im.onerror = function(){ im.hidden = true; };
+      return im;
+    }
+    function figure(id, n, f, halftone){
+      var box = $(id);
+      if (!f.src && halftone) {             // figure 1 with no image: the original halftone block
+        var h = el('div', 'halftone'); h.setAttribute('role', 'img'); h.setAttribute('aria-label', f.alt || 'Image placeholder');
+        box.appendChild(h);
+      } else {
+        var fr = el('div', 'frame'); if (f.src) fr.appendChild(image(f.src, f.alt)); box.appendChild(fr);
+      }
+      box.appendChild(el('figcaption', null, 'Fig. ' + n + (f.caption ? ' \u2014 ' + f.caption : '')));
+    }
+    figure('fig-1', 1, C.figure1, true);
+    figure('fig-2', 2, C.figure2, false);
+
+    // audio track list (the player script below turns these rows into the player)
+    if (!C.tracks.length) { $('audio-block').hidden = true; document.querySelector('[data-strip]').hidden = true; }
+    C.tracks.forEach(function(t){
+      var tr = el('tr'), th = el('th', 'tight'), b = el('button', 'play', 'Play'), nm = el('td', 'name', t.title);
+      th.scope = 'row'; tr.dataset.src = t.src; tr.dataset.title = t.title;
+      b.type = 'button'; b.setAttribute('aria-pressed', 'false'); b.setAttribute('aria-label', 'Play ' + t.title);
+      th.appendChild(b); tr.appendChild(th); tr.appendChild(nm); tr.appendChild(el('td', 'u dur', '--:--'));
+      $('tracks').appendChild(tr);
+    });
+
+    // small images: contact sheet (Fig. numbers continue from 3)
+    if (!C.sheet.length) $('sheet-block').hidden = true;
+    if (C.sheetGray) $('sheet').classList.add('gray');
+    C.sheet.forEach(function(s, i){
+      var n = i + 3, fg = el('figure', 'cell'), b = el('button', 'frame sq zoom');
+      b.type = 'button'; b.setAttribute('aria-label', 'Enlarge Fig. ' + n);
+      b.appendChild(image(s.src, s.alt)); fg.appendChild(b);
+      fg.appendChild(el('figcaption', null, 'Fig. ' + n + (s.caption ? ' \u2014 ' + s.caption : '')));
+      $('sheet').appendChild(fg);
+    });
+  } catch (e) {
+    console.error(e);
+    document.body.insertAdjacentHTML('afterbegin', '<p style="padding:12px;font:14px monospace">Content error: check the quotation marks and commas in the content block at the top of the file.</p>');
+  }
+})();
+</script>
+
+<!-- SCRIPT 2 of 3: AUDIO PLAYER (play/pause, waveform drawn from the audio file, seek). No need to edit. -->
+<script>
+(function(){
+  var p=document.querySelector('[data-player]'), strip=document.querySelector('[data-strip]');
+  if(!p||!strip) return;
+  var a=p.querySelector('audio'), rows=[].slice.call(p.querySelectorAll('tr[data-src]'));
+  var title=strip.querySelector('.s-title'), btn=strip.querySelector('.play'), c=strip.querySelector('.wave'), tm=strip.querySelector('.time');
+  var cur=null, peaks={}, ctx=null, N=240;
+
+  function fmt(s){ if(!isFinite(s)) return '0:00'; var m=Math.floor(s/60), r=Math.floor(s%60); return m+':'+(r<10?'0':'')+r; }
+  function mark(){
+    var playing=!a.paused;
+    rows.forEach(function(r){
+      var b=r.querySelector('button'), on=(r===cur&&playing);
+      b.setAttribute('aria-pressed',on); b.textContent=on?'Pause':'Play';
+      r.classList.toggle('on',r===cur);
+    });
+    btn.setAttribute('aria-pressed',playing); btn.textContent=playing?'Pause':'Play';
+  }
+
+  function getPeaks(src){
+    if(src in peaks) return Promise.resolve(peaks[src]);
+    return fetch(src).then(function(r){ if(!r.ok) throw new Error('missing'); return r.arrayBuffer(); })
+    .then(function(buf){
+      ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+      return new Promise(function(res,rej){ ctx.decodeAudioData(buf,res,rej); });
+    })
+    .then(function(ab){
+      var d=ab.getChannelData(0), step=Math.max(1,Math.floor(d.length/N)), skip=Math.max(1,step>>6), out=[], i, j, v, m;
+      for(i=0;i<N;i++){
+        m=0;
+        for(j=i*step;j<(i+1)*step&&j<d.length;j+=skip){ v=Math.abs(d[j]); if(v>m) m=v; }
+        out.push(m);
+      }
+      var top=Math.max.apply(null,out)||1;
+      peaks[src]=out.map(function(x){ return x/top; });
+      return peaks[src];
+    })
+    .catch(function(){ peaks[src]=null; return null; });
+  }
+
+  function draw(){
+    var cs=getComputedStyle(document.documentElement), ink=cs.getPropertyValue('--ink').trim(), rule=cs.getPropertyValue('--rule').trim();
+    var pk=cur?peaks[cur.dataset.src]:null, prog=(a.duration?a.currentTime/a.duration:0), dpr=window.devicePixelRatio||1;
+    var w=c.clientWidth, h=c.clientHeight; if(!w||!h) return;
+    if(c.width!==Math.round(w*dpr)||c.height!==Math.round(h*dpr)){ c.width=Math.round(w*dpr); c.height=Math.round(h*dpr); }
+    var g=c.getContext('2d'); g.setTransform(dpr,0,0,dpr,0,0); g.clearRect(0,0,w,h);
+    if(!pk){
+      g.fillStyle=rule; g.fillRect(0,h/2-1,w,2);
+      g.fillStyle=ink; g.fillRect(0,h/2-1,w*prog,2);
+      return;
+    }
+    var bw=w/pk.length, gap=Math.min(1.5,bw*0.3);
+    for(var i=0;i<pk.length;i++){
+      var bh=Math.max(2,pk[i]*h*0.92);
+      g.fillStyle=(i/pk.length<prog)?ink:rule;
+      g.fillRect(i*bw,(h-bh)/2,Math.max(1,bw-gap),bh);
+    }
+  }
+
+  function play(r){
+    if(r===cur){ if(a.paused){ a.play().catch(function(){}); } else { a.pause(); } return; }
+    cur=r; a.src=r.dataset.src; title.textContent=r.dataset.title;
+    a.play().catch(function(){});
+    mark(); draw();
+    getPeaks(r.dataset.src).then(draw);
+  }
+
+  var dragging=false;
+  function at(e){ var b=c.getBoundingClientRect(); if(a.duration) a.currentTime=Math.min(1,Math.max(0,(e.clientX-b.left)/b.width))*a.duration; }
+  c.addEventListener('pointerdown',function(e){ dragging=true; c.setPointerCapture(e.pointerId); at(e); });
+  c.addEventListener('pointermove',function(e){ if(dragging) at(e); });
+  c.addEventListener('pointerup',function(){ dragging=false; });
+  c.addEventListener('pointercancel',function(){ dragging=false; });
+  c.addEventListener('keydown',function(e){
+    if(!a.duration) return;
+    if(e.key==='ArrowRight'){ a.currentTime=Math.min(a.duration,a.currentTime+5); e.preventDefault(); }
+    else if(e.key==='ArrowLeft'){ a.currentTime=Math.max(0,a.currentTime-5); e.preventDefault(); }
+    else if(e.key==='Home'){ a.currentTime=0; e.preventDefault(); }
+  });
+
+  rows.forEach(function(r){ r.querySelector('button').addEventListener('click',function(){ play(r); }); });
+  btn.addEventListener('click',function(){ if(cur) play(cur); else if(rows[0]) play(rows[0]); });
+
+  a.addEventListener('play',mark); a.addEventListener('pause',mark);
+  a.addEventListener('loadedmetadata',function(){ if(cur) cur.querySelector('.dur').textContent=fmt(a.duration); });
+  a.addEventListener('timeupdate',function(){
+    tm.textContent=fmt(a.currentTime)+' / '+fmt(a.duration);
+    c.setAttribute('aria-valuenow',a.duration?Math.round(a.currentTime/a.duration*100):0);
+    draw();
+  });
+  a.addEventListener('ended',function(){
+    var i=rows.indexOf(cur);
+    if(rows[i+1]) play(rows[i+1]); else { mark(); title.textContent='Stopped'; }
+  });
+  a.addEventListener('error',function(){ title.textContent='File not found: '+(cur?cur.dataset.src:''); });
+
+  window.addEventListener('resize',draw);
+  if(window.matchMedia) window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',draw);
+  draw();
+})();
+</script>
+<!-- SCRIPT 3 of 3: IMAGE VIEWER (enlarge small images, Prev / Next / Close, arrow keys). No need to edit. -->
+<script>
+(function(){
+  var dlg=document.querySelector('.lightbox'), cells=[].slice.call(document.querySelectorAll('.sheet .zoom'));
+  if(!dlg||!cells.length||!dlg.showModal) return;
+  var img=dlg.querySelector('img'), cap=dlg.querySelector('figcaption'), count=dlg.querySelector('.lb-count'), cur=0;
+  function ok(i){ var m=cells[i].querySelector('img'); return m&&!m.hidden; }
+  function show(i){
+    var m=cells[i].querySelector('img'); cur=i;
+    img.src=m.currentSrc||m.src; img.alt=m.alt;
+    cap.textContent=cells[i].closest('figure').querySelector('figcaption').textContent;
+    count.textContent=(i+1)+' / '+cells.length;
+  }
+  function step(d){
+    var i=cur, n=cells.length, k;
+    for(k=0;k<n;k++){ i=(i+d+n)%n; if(ok(i)){ show(i); return; } }
+  }
+  cells.forEach(function(b,i){ b.addEventListener('click',function(){ if(!ok(i)) return; show(i); dlg.showModal(); }); });
+  dlg.addEventListener('click',function(e){
+    var a=e.target.getAttribute&&e.target.getAttribute('data-lb');
+    if(a==='prev') step(-1); else if(a==='next') step(1); else if(a==='close'||e.target===dlg) dlg.close();
+  });
+  dlg.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){ step(1); e.preventDefault(); }
+    else if(e.key==='ArrowLeft'){ step(-1); e.preventDefault(); }
+  });
+})();
+</script>
 </body>
 </html>
